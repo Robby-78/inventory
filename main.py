@@ -12,7 +12,9 @@ dt = datetime.datetime.utcnow()
 
 
 # try:
+#conn = psycopg2.connect("dbname='myduka' user='postgres' host='localhost' password='1234'")
 conn = psycopg2.connect("dbname='dcq2mm2ag4dcdn' user='qhdfbpkgxbngyh' host='ec2-52-48-159-67.eu-west-1.compute.amazonaws.com' password='c37598ff2e5d8d06eebaa1158209d9de42b60038e46cb1d52c11874f20a6b39a'")
+
 # except:
 #     print ("I am unable to connect to the database")
 
