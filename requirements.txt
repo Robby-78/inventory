@@ -1,4 +1,4 @@
-apsw=
+apsw
 apt-clone==0.2
 apturl==0.5.2
 attrs==19.3.0
