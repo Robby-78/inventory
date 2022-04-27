@@ -36,7 +36,7 @@ def save_product():
     bp = request.form["buying_price"]
     sp = request.form["selling_price"]
     sq = request.form["stock_quantity"]
-    cur = conn.cursor()
+    # cur = conn.cursor()
     postgres_insert_query = """INSERT into products(name, buying_price, selling_price, stock_quantity) VALUES (%s,%s,%s,%s)"""
     record_to_insert = (n,bp,sp,sq)
     cur.execute(postgres_insert_query, record_to_insert)
@@ -51,7 +51,7 @@ def save_product():
 def make_sale():
     n = request.form["quantity"]
     bp=request.form["pid"]
-    cur = conn.cursor()
+    # cur = conn.cursor()
     postgres_insert_query = """INSERT into sales(pid, quantity,created_at) VALUES (%s,%s,%s)"""
     record_to_insert = (bp,n,dt)
     cur.execute(postgres_insert_query, record_to_insert)
@@ -64,7 +64,7 @@ def sales():
     cur = conn.cursor()
     cur.execute("""SELECT * from sales""")
     rows = cur.fetchall()
-    cur = conn.cursor()
+    # cur = conn.cursor()
     # cur.execute("""SELECT name from products""")
     # name = cur.fetchall()
     
@@ -75,7 +75,7 @@ def sales():
 
 @app.route('/dashboard')
 def dashboard():
-    cur=conn.cursor()
+    # cur=conn.cursor()
     cur.execute (""" select sales.quantity, products.name from products join sales on sales.id=products.id group by products.name, sales.quantity;""")
     rows=cur.fetchall()
 
@@ -92,14 +92,14 @@ def dashboard():
 
 @app.route('/inventory')
 def inventories():
-    cur= conn.cursor()
+    # cur= conn.cursor()
     cur.execute("""select * from products""")
     rows = cur.fetchall()
     return render_template("inventory.html",rows=rows )
 
 @app.route ("/view/<int:im>")
 def view_sales(im):
-    cur=conn.cursor()
+    # cur=conn.cursor()
     cur.execute("select * from sales where pid= %s",str(im))
     rows = cur.fetchall()
     # print (rows)
