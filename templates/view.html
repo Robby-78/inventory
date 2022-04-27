@@ -8,34 +8,37 @@
     <title>View sale</title>
 </head>
 <body>
-    <div>
-        <table class="table table-bordered border-primary">
-            <thead>
-              <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Product ID</th>
-                <th scope="col">Quantity</th>
-                <th scope="col">Sold on</th>
-                <th scope="col">Product Name</th>
-        
+{%extends 'base.html'%}
+    {%block content%}
+        <div>
+            <table class="table table-bordered border-primary">
+                <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Product ID</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Sold on</th>
+                    <th scope="col">Product Name</th>
             
-              </tr>
-            </thead>
-            <tbody>
-                {% for im in rows %}
-              <tr>
-                <td>{{im[0]}}</td>
-                <td>{{im[1]}}</td>
-                <td>{{im[2]}}</td>
-                <td>{{im[3]}}</td>
-                <td></td>
-              </tr>
-              {% endfor %}
-              
-            
-            </tbody>
-        </table>
-        </div>
+                
+                </tr>
+                </thead>
+                <tbody>
+                    {% for im in rows %}
+                <tr>
+                    <td>{{im[0]}}</td>
+                    <td>{{im[1]}}</td>
+                    <td>{{im[2]}}</td>
+                    <td>{{im[3]}}</td>
+                    <td></td>
+                </tr>
+                {% endfor %}
+                
+                
+                </tbody>
+            </table>
+            </div>
+        {%endblock%}
 
 
 

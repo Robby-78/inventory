@@ -14,135 +14,38 @@
         <title>Inventory App</title>
       </head>
 <body>
-    
-    <nav class="navbar navbar-expand-lg   bg-light"style="background-color: #e3f2fd;">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="/">IMS</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="dashboard">Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="sales">Sales</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="inventory">Inventory</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="stock">Stock</a>
-                    </li>
-                
-                </ul>
-          </div>
-        </div>
-    </nav>
+{%extends 'base.html'%}
 
-    <div class=container>
-        <div class=row>
-            <div class=col-3 style=margin-top:40px;>
-                    <!-- <div class="border-end bg-white" id="sidebar-wrapper"> -->
-                                    
-                    <div class="list-group list-group-flush"> 
-                        
-                        <a class="list-group-item list-group-item-action list-group-item-dark p-3" style="background-color:black;color:red; border-right-style: ridge;"href="/dashboard">Dashboard</a>
-                        <a class="list-group-item list-group-item-action list-group-item-dark p-3" style="background-color:black;color:red;" href="/sales">Sales</a>
-                        <a class="list-group-item list-group-item-action list-group-item-light p-3"style="background-color:black;color:red; "href="/inventory">Inventories</a>
-                        <a class="list-group-item list-group-item-action list-group-item-light p-3"style="background-color:black;color:red; "href="#!">Stock</a>
-                        <a class="list-group-item list-group-item-action list-group-item-light p-3"style="background-color:black;color:red; "href="#!">Users</a>
-                    </div>
-            </div>
-            <div class=col-9>
-                <div class=container>
-                    <div class=row>
-                        <div class=col-4> </div>
-                        <div class=col-4>                 
-                            <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary" style="margin-top:40px;"data-toggle="modal" data-target="#exampleModalScrollable">     
-                            ADD NEW ITEM+
-                            </button> 
+    {%block content%}
 
-                            <!-- Modal -->
 
-                            <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-scrollable" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalScrollableTitle">Add products</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form action="/save-inventory" method="post">
-                                                <div class="mb-3">
-                                                  <label for="exampleInputtext" class="form-label">Name</label>
-                                                  <input name="name" type="text" class="form-control" id="exampleInputtext" aria-describedby="textHelp">
-                                                  
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label for="exampleInputtext" class="form-label">Buying Price</label>
-                                                    <input name="buying_price" type="text" class="form-control" id="exampleInputtext" aria-describedby="textHelp">
-                                                    
-                                                  </div>
-                                                  <div class="mb-3">
-                                                    <label for="exampleInputtext" class="form-label">Selling Price</label>
-                                                    <input name="selling_price" type="text" class="form-control" id="exampleInputtext" aria-describedby="textHelp">
-                                                    
-                                                  </div>
-                                                  <div class="mb-3">
-                                                    <label for="exampleInputtext" class="form-label">Stock Quantity</label>
-                                                    <input name="stock_quantity" type="text" class="form-control" id="exampleInputtext" aria-describedby="textHelp">
-                                                    
-                                                  </div>
-                                                  <button type="submit" class="btn btn-primary" >Save changes</button>
-
-                                              </form>
-                                        </div>
-                                    <div class="modal-footer">
-                                       
-                                     </div>
-                                  </div>
-                            </div>
+        <div class=container>
+            <div class=row>
+                <div class=col-3 style=margin-top:40px;>
+                        <!-- <div class="border-end bg-white" id="sidebar-wrapper"> -->
+                                        
+                        <div class="list-group list-group-flush"> 
+                            
+                            <a class="list-group-item list-group-item-action list-group-item-dark p-3" style="background-color:black;color:red; border-right-style: ridge;"href="/dashboard">Dashboard</a>
+                            <a class="list-group-item list-group-item-action list-group-item-dark p-3" style="background-color:black;color:red;" href="/sales">Sales</a>
+                            <a class="list-group-item list-group-item-action list-group-item-light p-3"style="background-color:black;color:red; "href="/inventory">Inventories</a>
+                            <a class="list-group-item list-group-item-action list-group-item-light p-3"style="background-color:black;color:red; "href="#!">Stock</a>
+                            <a class="list-group-item list-group-item-action list-group-item-light p-3"style="background-color:black;color:red; "href="#!">Users</a>
                         </div>
-                    <div class=col-4></div>
                 </div>
-                <div>
-                    <table id="myTable" class="table" style="background-color: rgb(216, 206, 206); border-radius: 10px; margin-top: 10px;">
-                        <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Buying Price</th>
-                            <th scope="col">Selling Price</th>
-                            <th scope="col">Stock Quantity</th>
-                            <th scope="col">Sale</th>
-                            <th scope="col">View sale</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {% for i in rows %}
-                        <tr>
-                            <th scope="row">{{i[0]}}</th>
-                            <td>{{i[1]}}</td>
-                            <td>{{i[2]}}</td>
-                            <td>{{i[3]}}</td>
-                            <td>{{i[4]}}</td>
-                            <td>
-                                  <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-outline-info" style="margin-top:4px;"data-toggle="modal" data-target="#exampleModalScrollable{{i[0]}}">     
-                                $
+                <div class=col-9>
+                    <div class=container>
+                        <div class=row>
+                            <div class=col-4> </div>
+                            <div class=col-4>                 
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary" style="margin-top:40px;"data-toggle="modal" data-target="#exampleModalScrollable">     
+                                ADD NEW ITEM+
                                 </button> 
-    
+
                                 <!-- Modal -->
-    
-                                <div class="modal fade" id="exampleModalScrollable{{i[0]}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+
+                                <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-scrollable" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -152,43 +55,115 @@
                                             </button>
                                             </div>
                                             <div class="modal-body">
-                                                <form action="/make-sale" method="post">
+                                                <form action="/save-inventory" method="post">
                                                     <div class="mb-3">
-                                                      <label for="exampleInputtext" class="form-label">Product ID </label>
-                                                      <input name="pid" type="text" value="{{i[0]}}" class="form-control" id="exampleInputtext" aria-describedby="textHelp">
-                                                      
+                                                    <label for="exampleInputtext" class="form-label">Name</label>
+                                                    <input name="name" type="text" class="form-control" id="exampleInputtext" aria-describedby="textHelp">
+                                                    
                                                     </div>
                                                     <div class="mb-3">
-                                                        <label for="exampleInputtext" class="form-label">Quantity</label>
-                                                        <input name="quantity" type="text" class="form-control" id="exampleInputtext" aria-describedby="textHelp">
+                                                        <label for="exampleInputtext" class="form-label">Buying Price</label>
+                                                        <input name="buying_price" type="text" class="form-control" id="exampleInputtext" aria-describedby="textHelp">
                                                         
-                                                      </div>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="exampleInputtext" class="form-label">Selling Price</label>
+                                                        <input name="selling_price" type="text" class="form-control" id="exampleInputtext" aria-describedby="textHelp">
+                                                        
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="exampleInputtext" class="form-label">Stock Quantity</label>
+                                                        <input name="stock_quantity" type="text" class="form-control" id="exampleInputtext" aria-describedby="textHelp">
+                                                        
+                                                    </div>
+                                                    <button type="submit" class="btn btn-primary" >Save changes</button>
 
-                                                      </div>
-                                                      <button type="submit" class="btn btn-primary" >Save changes</button>
-    
-                                                  </form>
+                                                </form>
                                             </div>
                                         <div class="modal-footer">
-                                           
-                                         </div>
-                                      </div>
+                                        
+                                        </div>
+                                    </div>
                                 </div>
-                            
-                               
-                            </td>
-                            <td><a href="view/{{i[0]}}">View</a></td>
-                     
-                        </tr>
-                        {% endfor %}
-                        </tbody>
-                    </table>
+                            </div>
+                        <div class=col-4></div>
+                    </div>
+                    <div>
+                        <table id="myTable" class="table" style="background-color: rgb(216, 206, 206); border-radius: 10px; margin-top: 10px;">
+                            <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Buying Price</th>
+                                <th scope="col">Selling Price</th>
+                                <th scope="col">Stock Quantity</th>
+                                <th scope="col">Sale</th>
+                                <th scope="col">View sale</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for i in rows %}
+                            <tr>
+                                <th scope="row">{{i[0]}}</th>
+                                <td>{{i[1]}}</td>
+                                <td>{{i[2]}}</td>
+                                <td>{{i[3]}}</td>
+                                <td>{{i[4]}}</td>
+                                <td>
+                                    <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-outline-info" style="margin-top:4px;"data-toggle="modal" data-target="#exampleModalScrollable{{i[0]}}">     
+                                    $
+                                    </button> 
+        
+                                    <!-- Modal -->
+        
+                                    <div class="modal fade" id="exampleModalScrollable{{i[0]}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalScrollableTitle">Add products</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form action="/make-sale" method="post">
+                                                        <div class="mb-3">
+                                                        <label for="exampleInputtext" class="form-label">Product ID </label>
+                                                        <input name="pid" type="text" value="{{i[0]}}" class="form-control" id="exampleInputtext" aria-describedby="textHelp">
+                                                        
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="exampleInputtext" class="form-label">Quantity</label>
+                                                            <input name="quantity" type="text" class="form-control" id="exampleInputtext" aria-describedby="textHelp">
+                                                            
+                                                        </div>
+
+                                                        </div>
+                                                        <button type="submit" class="btn btn-primary" >Save changes</button>
+        
+                                                    </form>
+                                                </div>
+                                            <div class="modal-footer">
+                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                
+                                </td>
+                                <td><a href="view/{{i[0]}}">View</a></td>
+                        
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-      
+      {%endblock%}
     <!-- Font-awesome kit -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
     <script type="text/javascript" src=""></script>

@@ -7,44 +7,23 @@
     <title>Dashboard</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg   bg-light"style="background-color: #e3f2fd;">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="/">IMS</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="dashboard">Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="sales">Sales</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="inventory">Inventory</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="stock">Stock</a>
-                    </li>
-                
-                </ul>
-          </div>
+  <br>
+  <div class="container">
+    {%extends 'base.html'%}
+      {%block cotent%}
+      
+        <div class="container">
+            <div class="row">
+                <div class="col-4"></div>
+                <div class="col-4"><canvas id="bar-chart" width="800" height="450"></canvas></div>
+                <div class="col-4"></div>
+            </div>
         </div>
-    </nav>
-    <div class="container">
-        <div class="row">
-            <div class="col-4"></div>
-            <div class="col-4"><canvas id="bar-chart" width="800" height="450"></canvas></div>
-            <div class="col-4"></div>
-        </div>
-    </div>
+      
+  </div>
             
 
-
+  {%endblock%}
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"> </script>
 <script>
