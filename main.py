@@ -19,7 +19,7 @@ conn = psycopg2.connect("dbname='dcq2mm2ag4dcdn' user='qhdfbpkgxbngyh' host='ec2
 #     print ("I am unable to connect to the database")
 cur = conn.cursor()
 cur.execute("""CREATE TABLE IF NOT EXISTS products (id serial PRIMARY KEY, name VARCHAR (100) NOT NULL, buying_price VARCHAR (30)  NOT NULL, selling_price VARCHAR (30) NOT NULL, stock_quantity VARCHAR (30) NOT NULL);""")
-cur.execute("""CREATE TABLE IF NOT EXISTS sales (id serial PRIMARY KEY,pid int, quantity VARCHAR (30) NOT NULL, created_at VARCHAR (30) NOT NULL, foreign key (pid) REFERENCES products(id);""")
+cur.execute("""CREATE TABLE IF NOT EXISTS sales (id serial PRIMARY KEY,pid int, quantity VARCHAR (30) NOT NULL, created_at VARCHAR (30) NOT NULL, foreign key (pid) REFERENCES products(id));""")
 conn.commit()
 
 
@@ -95,10 +95,7 @@ def inventories():
     cur= conn.cursor()
     cur.execute("""select * from products""")
     rows = cur.fetchall()
-
-    for i in rows:
-        # print (i[0])
-     return render_template("inventory.html",rows=rows )
+    return render_template("inventory.html",rows=rows )
 
 @app.route ("/view/<int:im>")
 def view_sales(im):
