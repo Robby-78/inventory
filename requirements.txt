@@ -1,4 +1,4 @@
-apsw==3.28.0.post1
+apsw
 apt-clone==0.2.1
 apturl==0.5.2
 beautifulsoup4==4.8.2
