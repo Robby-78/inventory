@@ -20,11 +20,11 @@ conn = psycopg2.connect("dbname='dcq2mm2ag4dcdn' user='qhdfbpkgxbngyh' host='ec2
 cur = conn.cursor()
 cur.execute("""CREATE TABLE IF NOT EXISTS products (id serial PRIMARY KEY, name VARCHAR (100) NOT NULL, buying_price VARCHAR (30)  NOT NULL, selling_price VARCHAR (30) NOT NULL, stock_quantity VARCHAR (30) NOT NULL);""")
 cur.execute("""CREATE TABLE IF NOT EXISTS sales (id\
-serial PRIMARY KEY,   pid\
-integer \
-REFERENCES products(id) on delete restrict on update cascade,\
-quantity VARCHAR (30) NOT NULL, created_at\
-VARCHAR (30) NOT NULL);""")
+    serial PRIMARY KEY,   pid\
+    integer \
+    REFERENCES products(id) on delete restrict on update cascade,\
+    quantity VARCHAR (30) NOT NULL, created_at timestamp\
+    VARCHAR (30) NOT NULL);""")
 
 
 
