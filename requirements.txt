@@ -1,5 +1,5 @@
 apsw
-apt-clone==0.2.1
+apt-clone
 apturl==0.5.2
 beautifulsoup4==4.8.2
 blinker==1.4
