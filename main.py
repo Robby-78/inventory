@@ -25,7 +25,7 @@ cur.execute("""CREATE TABLE IF NOT EXISTS sales (id\
     REFERENCES products(id) on delete restrict on update cascade,\
     quantity VARCHAR (30) NOT NULL, created_at timestamp\
     VARCHAR (30) NOT NULL);""")
-
+conn.commit()
 
 
 
