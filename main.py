@@ -10,10 +10,10 @@ app = Flask(__name__)
 dt = datetime.datetime.utcnow()
 
 
-# try:
+try:
 conn = psycopg2.connect("dbname='myduka' user='postgres' host='localhost' password='1234'")
-# except:
-#     print ("I am unable to connect to the database")
+except:
+    print ("I am unable to connect to the database")
 
 @app.route('/')
 def home():
